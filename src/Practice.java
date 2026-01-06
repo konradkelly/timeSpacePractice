@@ -40,8 +40,8 @@ public class Practice {
     return frequencies;
   }
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: 0(n^2)
+  // Space Complexity: 0(1)
   public static List<Integer> evensToSquare(int n) {
     List<Integer> evens = new ArrayList<>();
     for(int i = 0; i <= n*n; i+=2) {
