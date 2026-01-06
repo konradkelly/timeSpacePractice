@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
