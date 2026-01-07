@@ -84,6 +84,17 @@ public class PracticeTest {
   }
 
   @Test
+  public void testCountFrequencies_whenNegativeNumbers() {
+    Integer[] nums = {-98, -95, -96, -98, -95, -98, -97, -96, -98, -95};
+    Map<Integer, Integer> actual = Practice.countFrequencies(nums);
+    
+    assertEquals(4, actual.get(-98));
+    assertEquals(3, actual.get(-95));
+    assertEquals(2, actual.get(-96));
+    assertEquals(1, actual.get(-97));
+  }
+
+  @Test
   public void testMostCommonTimeEfficient_whenOrderedArray() {
     int[] nums = {1001, 1002, 1002, 1002, 1003};
     int actual = Practice.mostCommonTimeEfficient(nums);
