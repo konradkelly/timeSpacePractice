@@ -8,12 +8,19 @@ public class PracticeTest {
 
   // Hints: They are static methods, so you will use the full Practice.mostCommonTimeEfficient for method calls
 
-
   @Test
   public void testMostCommonTimeEfficient_whenOrderedArray() {
     int[] nums = {1001, 1002, 1002, 1002, 1003};
     int actual = Practice.mostCommonTimeEfficient(nums);
     assertEquals(1002, actual);
+  }
+
+  @Test
+  public void testMostCommonTimeEfficient_handlesIllegalArgumentException_whenEmptyArray() {
+    int[] nums = {};  
+    assertThrows(IllegalArgumentException.class, () -> {
+      Practice.mostCommonTimeEfficient(nums);
+    });
   }
 
   @Test
