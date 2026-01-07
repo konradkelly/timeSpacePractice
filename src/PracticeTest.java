@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -9,6 +10,52 @@ public class PracticeTest {
   // TODO: Implement tests for Practice.mostCommonTimeEfficient and Practice.mostCommonSpaceEfficient
 
   // Hints: They are static methods, so you will use the full Practice.mostCommonTimeEfficient for method calls
+
+  // findEvens Tests
+
+  @Test
+  public void testFindEvens_whenArrayContainsOddsAndEvens() {
+    int[] nums = {91, 94, 93, 95, 92, 97, 96, 100};
+    List<Integer> actual = Practice.findEvens(nums);
+    
+    assertEquals(List.of(94, 92, 96, 100), actual);
+  }
+
+  @Test
+  public void testFindEvens_whenAllEvens() {
+    int[] nums = {90, 92, 94, 96, 98, 100};
+    List<Integer> actual = Practice.findEvens(nums);
+    
+      assertEquals(List.of(90, 92, 94, 96, 98, 100), actual);
+  }
+
+  @Test
+  public void testFindEvens_whenAllOdds() {
+    int[] nums = {91, 93, 95, 99, 97};
+    List<Integer> actual = Practice.findEvens(nums);
+    
+    assertTrue(actual.isEmpty());
+  }
+
+  @Test
+  public void testFindEvens_whenEmptyArray() {
+    int[] nums = {};
+    List<Integer> actual = Practice.findEvens(nums);
+    
+    assertTrue(actual.isEmpty());
+  }
+
+  @Test
+  public void testFindEvens_whenArrayContainsNegativeNumbers() {
+    int[] nums = {-90, -91, -92, -93, -94, -95, -96, -97, -98};
+    List<Integer> actual = Practice.findEvens(nums);
+    
+    assertEquals(5, actual.size());
+    assertEquals(List.of(-90, -92, -94, -96, -98), actual);
+  }
+
+  // countFrequencies Tests
+
   @Test
   public void testCountFrequencies_whenIntegersHaveDifferentFrequencies() {
     Integer[] nums = {97, 97, 97, 97, 98, 98, 99, 100, 100, 100};
