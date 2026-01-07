@@ -59,8 +59,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -68,7 +68,19 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    
+    int mostCommon = 0;
+    
+    Map<Integer, Integer> frequencies = new HashMap<>();
+
+    for (int num : nums) {
+      frequencies.put(num, frequencies.getOrDefault(num, 0) + 1);
+      if (frequencies.get(num) > mostCommon) {
+        mostCommon = frequencies.get(num);
+      }
+    }
+
+    return mostCommon;
   }
 
   /**
@@ -81,7 +93,7 @@ public class Practice {
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
    * Time Complexity: 
-   * Space Complexity: 
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
