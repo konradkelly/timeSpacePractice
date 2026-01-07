@@ -69,18 +69,24 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
     
-    int mostCommon = 0;
-    
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Error: array contains no values");
+    }
+
+    int mostCommonElement = 0;
+    int currentFrequency = 0;
+
     Map<Integer, Integer> frequencies = new HashMap<>();
 
     for (int num : nums) {
       frequencies.put(num, frequencies.getOrDefault(num, 0) + 1);
-      if (frequencies.get(num) > mostCommon) {
-        mostCommon = frequencies.get(num);
+      if (frequencies.get(num) > currentFrequency) {
+        mostCommonElement = num;
+        currentFrequency = frequencies.get(num);
       }
     }
 
-    return mostCommon;
+    return mostCommonElement;
   }
 
   /**
