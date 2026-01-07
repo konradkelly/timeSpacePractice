@@ -16,6 +16,13 @@ public class PracticeTest {
   }
 
   @Test
+  public void testMostCommonTimeEfficient_whenUnorderedArray() {
+    int[] nums = {1001, 1003, 1002, 1002, 1002};
+    int actual = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(1002, actual);
+  }
+
+  @Test
   public void testMostCommonTimeEfficient_handlesIllegalArgumentException_whenEmptyArray() {
     int[] nums = {};  
     assertThrows(IllegalArgumentException.class, () -> {
