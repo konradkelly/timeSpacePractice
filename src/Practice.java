@@ -108,6 +108,10 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
     
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Error: array contains no values");
+    }    
+
     int mostCommonElement = 0;
     int lastFrequency = 0;
     for (int i = 0; i < nums.length; i++) {
