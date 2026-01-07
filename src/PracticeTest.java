@@ -117,6 +117,13 @@ public class PracticeTest {
   }
 
   @Test
+  public void testMostCommonTimeEfficient_whenNegativeNumbers() {
+    int[] nums = {-94, -98, -94, -97, -94, -96, -94};
+    int actual = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(-94, actual);
+  }
+
+  @Test
   public void testMostCommonSpaceEfficient_whenOrderedArray() {
     int[] nums = {97, 98, 99, 99, 99, 100};
     int actual = Practice.mostCommonSpaceEfficient(nums);
@@ -135,5 +142,12 @@ public class PracticeTest {
     int[] nums = {97, 97, 98, 98, 99, 100};
     int actual = Practice.mostCommonSpaceEfficient(nums);
     assertEquals(97, actual);
+  }
+
+  @Test
+  public void testMostCommonSpaceEfficient_whenNegativeNumbers() {
+    int[] nums = {-94, -98, -94, -97, -94, -96, -94};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(-94, actual);
   }
 }
