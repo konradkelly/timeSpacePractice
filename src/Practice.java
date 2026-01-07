@@ -40,8 +40,8 @@ public class Practice {
     return frequencies;
   }
 
-  // Time Complexity: 0(n^2)
-  // Space Complexity: 0(1)
+  // Time Complexity: O(n^2)
+  // Space Complexity: O(1)
   public static List<Integer> evensToSquare(int n) {
     List<Integer> evens = new ArrayList<>();
     for(int i = 0; i <= n*n; i+=2) {
@@ -92,7 +92,7 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
+   * Time Complexity: O(n^2) where n = nums.length
    * Space Complexity: O(1)
    * 
    * @param nums An array of integers
@@ -101,6 +101,22 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    
+    int mostCommonElement = 0;
+    int lastFrequency = 0;
+    for (int i = 0; i < nums.length; i++) {
+      int currentElement = nums[i];
+      int currentFrequency = 0;
+      for (int j = 0; j < nums.length; j++) {
+        if (nums[j] == currentElement) {
+          currentFrequency++;
+        }
+      }
+      if (currentFrequency > lastFrequency) {
+        mostCommonElement = currentElement;
+        lastFrequency = currentFrequency;
+      }
+    }
+    return mostCommonElement;
   }
 }
