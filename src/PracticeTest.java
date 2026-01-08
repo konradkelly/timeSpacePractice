@@ -94,6 +94,61 @@ public class PracticeTest {
     assertEquals(1, actual.get(-97));
   }
 
+  // sumDiagonal Tests
+
+  @Test
+  public void testSumDiagonal_when3x3Matrix() {
+    int[][] matrix = {
+      {1, 2, 3},
+      {4, 5, 6},
+      {7, 8, 9}
+    };
+    int actual = Practice.sumDiagonal(matrix);
+    assertEquals(15, actual);
+  }
+
+  @Test
+  public void testSumDiagonal_whenMatrixContainsNegativeNumbers() {
+    int[][] matrix = {
+      {-5, 2, 3},
+      {4, -10, 6},
+      {7, 8, -15}
+    };
+    int actual = Practice.sumDiagonal(matrix);
+    assertEquals(-30, actual);
+  }
+
+  @Test
+  public void testSumDiagonal_when1x1Matrix() {
+    int[][] matrix = {{99}};
+    int actual = Practice.sumDiagonal(matrix);
+    assertEquals(99, actual);
+  }
+
+
+  // evensToSquare Tests
+
+  @Test
+  public void testEvensToSquare_whenIsFour() {
+    List<Integer> actual = Practice.evensToSquare(4);
+    assertEquals(List.of(0, 2, 4, 6, 8, 10, 12, 14, 16), actual);
+  }
+
+  @Test
+  public void testEvensToSquare_whenIsOne() {
+    List<Integer> actual = Practice.evensToSquare(1);
+    assertEquals(List.of(0), actual);
+  }
+
+  @Test
+  public void testEvensToSquare_whenIsZero() {
+    List<Integer> actual = Practice.evensToSquare(0);
+    assertEquals(List.of(0), actual);
+  }
+
+
+  // mostCommonTimeEfficient Tests
+
   @Test
   public void testMostCommonTimeEfficient_whenOrderedArray() {
     int[] nums = {1001, 1002, 1002, 1002, 1003};
@@ -122,6 +177,8 @@ public class PracticeTest {
     int actual = Practice.mostCommonTimeEfficient(nums);
     assertEquals(-94, actual);
   }
+
+  // mostCommonSpaceEfficient Tests
 
   @Test
   public void testMostCommonSpaceEfficient_whenOrderedArray() {
