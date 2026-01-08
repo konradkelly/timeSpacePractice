@@ -150,4 +150,25 @@ public class PracticeTest {
     int actual = Practice.mostCommonSpaceEfficient(nums);
     assertEquals(-94, actual);
   }
+
+  @Test
+  public void testMostCommonSpaceEfficient_equalOppositesNegative() {
+    int[] nums = {-1000, 1000, -1001, 1001};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(-1000, actual);
+  }
+
+  @Test
+  public void testMostCommonSpaceEfficient_equalOppositesPositive() {
+    int[] nums = {1000, -1000, 1001, -1001};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(1000, actual);
+  }
+
+  @Test
+  public void testMostCommonTimeEfficient_equalOppositesNegative() {
+    int[] nums = {-1000, 1000, -1001, 1001};
+    int actual = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(-1000, actual);
+  }
 }
